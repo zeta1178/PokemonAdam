@@ -20,12 +20,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oNk-G5-WML"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emh-17-9JP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="L6R-O1-hLA"/>
+                                    <constraint firstAttribute="height" constant="50" id="ccd-eJ-KYI"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="emh-17-9JP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="CkX-OD-Z8e"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oNk-G5-WML" secondAttribute="bottom" id="G9V-VJ-3du"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oNk-G5-WML" secondAttribute="trailing" id="KlP-9E-f2o"/>
                             <constraint firstItem="oNk-G5-WML" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LzV-u2-6P6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="emh-17-9JP" secondAttribute="trailing" constant="10" id="WXH-4x-s2z"/>
                             <constraint firstItem="oNk-G5-WML" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y8H-uy-ggi"/>
                         </constraints>
                     </view>
@@ -37,4 +46,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="compass" width="512" height="512"/>
+    </resources>
 </document>

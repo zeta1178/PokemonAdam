@@ -38,8 +38,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000,1000)
             mapView.setRegion(region, animated: false)
             updateCount += 1
+        } else {
+            manager.stopUpdatingLocation()
         }
     }
     
+    @IBAction func centerTapped(_ sender: AnyObject) {
+        let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000,1000)
+        mapView.setRegion(region, animated: true)
+    }
     
 }
