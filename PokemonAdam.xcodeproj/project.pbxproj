@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB12CD621D9EF90700EB1474 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB12CD611D9EF90700EB1474 /* MapKit.framework */; };
 		AB5ADFD61D9EEAFB00571F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5ADFD51D9EEAFB00571F93 /* AppDelegate.swift */; };
 		AB5ADFD81D9EEAFB00571F93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5ADFD71D9EEAFB00571F93 /* ViewController.swift */; };
 		AB5ADFDB1D9EEAFB00571F93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB5ADFD91D9EEAFB00571F93 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB12CD611D9EF90700EB1474 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AB5ADFD21D9EEAFB00571F93 /* PokemonAdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonAdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB5ADFD51D9EEAFB00571F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB5ADFD71D9EEAFB00571F93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB12CD621D9EF90700EB1474 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB12CD601D9EF90700EB1474 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB12CD611D9EF90700EB1474 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB5ADFC91D9EEAFB00571F93 = {
 			isa = PBXGroup;
 			children = (
 				AB5ADFD41D9EEAFB00571F93 /* PokemonAdam */,
 				AB5ADFD31D9EEAFB00571F93 /* Products */,
+				AB12CD601D9EF90700EB1474 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -252,7 +264,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -267,10 +279,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NQS57WE77C;
 				INFOPLIST_FILE = PokemonAdam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.Cruzy.PokemonAdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,10 +294,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NQS57WE77C;
 				INFOPLIST_FILE = PokemonAdam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.Cruzy.PokemonAdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -306,6 +322,7 @@
 				AB5ADFE91D9EEAFB00571F93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
