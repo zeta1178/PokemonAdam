@@ -26,6 +26,9 @@
                                     <constraint firstAttribute="height" constant="50" id="ccd-eJ-KYI"/>
                                 </constraints>
                                 <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="centerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHu-lN-rRn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
