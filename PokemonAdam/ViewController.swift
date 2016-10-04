@@ -27,6 +27,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("We are ready to go!")
             mapView.showsUserLocation = true
             manager.startUpdatingLocation()
+            
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+                //Spawn a Pokemon
+                
+                if let coord = self.manager.location?.coordinate {
+                let anno = MKPointAnnotation()
+                anno.coordinate = coord
+                anno.coordinate.latitude += 0.001
+                self.mapView.addAnnotation(anno)
+                
+                }
+                
+            })
+            
         } else {
             manager.requestWhenInUseAuthorization()
         }
@@ -47,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func centerTap(_ sender: AnyObject) {
         
-        if let coord = manager.location?.coordinate{
+        if let coord = manager.location?.coordinate {
             let region = MKCoordinateRegionMakeWithDistance(coord, 400,400)
             mapView.setRegion(region, animated: true)
             
