@@ -30,13 +30,25 @@
                                     <action selector="centerTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHu-lN-rRn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tar-o1-qFE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="pKR-zc-XLS"/>
+                                    <constraint firstAttribute="height" constant="50" id="yQL-0p-Ki7"/>
+                                </constraints>
+                                <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <segue destination="uXA-1m-Bsd" kind="presentation" id="qdB-Tu-9at"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tar-o1-qFE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="27S-8E-PTt"/>
                             <constraint firstItem="emh-17-9JP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="CkX-OD-Z8e"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oNk-G5-WML" secondAttribute="bottom" id="G9V-VJ-3du"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oNk-G5-WML" secondAttribute="trailing" id="KlP-9E-f2o"/>
                             <constraint firstItem="oNk-G5-WML" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LzV-u2-6P6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tar-o1-qFE" secondAttribute="bottom" constant="20" id="UAj-mC-BCw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="emh-17-9JP" secondAttribute="trailing" constant="10" id="WXH-4x-s2z"/>
                             <constraint firstItem="oNk-G5-WML" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Y8H-uy-ggi"/>
                         </constraints>
@@ -48,8 +60,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Pokedex View Controller-->
+        <scene sceneID="9A8-Za-6Op">
+            <objects>
+                <viewController id="uXA-1m-Bsd" customClass="PokedexViewController" customModule="PokemonAdam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55f-BS-2XZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="niV-So-XdP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WHj-df-4ya">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Zy-WX-gEm">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJg-2f-fdF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EDJ-sd-G0v"/>
+                                    <constraint firstAttribute="width" constant="50" id="RbP-nw-6SA"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                                <connections>
+                                    <action selector="mapTapped:" destination="uXA-1m-Bsd" eventType="touchUpInside" id="sIZ-hQ-Efs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="niV-So-XdP" firstAttribute="top" secondItem="cJg-2f-fdF" secondAttribute="bottom" constant="20" id="9LR-9d-1Tb"/>
+                            <constraint firstItem="2Zy-WX-gEm" firstAttribute="top" secondItem="55f-BS-2XZ" secondAttribute="bottom" id="LsC-Sl-plb"/>
+                            <constraint firstItem="niV-So-XdP" firstAttribute="top" secondItem="2Zy-WX-gEm" secondAttribute="bottom" id="Pym-lN-KYf"/>
+                            <constraint firstItem="cJg-2f-fdF" firstAttribute="centerX" secondItem="WHj-df-4ya" secondAttribute="centerX" id="rpQ-HE-pis"/>
+                            <constraint firstItem="2Zy-WX-gEm" firstAttribute="leading" secondItem="WHj-df-4ya" secondAttribute="leadingMargin" id="sIT-8j-ixL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Zy-WX-gEm" secondAttribute="trailing" id="uVN-Lb-p16"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2Zy-WX-gEm" id="UAL-B0-1I8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MN3-pN-wgN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="36"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Adam" width="512" height="511"/>
+        <image name="map" width="512" height="512"/>
+        <image name="pokeball" width="512" height="512"/>
     </resources>
 </document>
