@@ -37,7 +37,7 @@
                                 </constraints>
                                 <state key="normal" image="pokeball"/>
                                 <connections>
-                                    <segue destination="uXA-1m-Bsd" kind="presentation" id="qdB-Tu-9at"/>
+                                    <segue destination="uXA-1m-Bsd" kind="presentation" identifier="pokedexSegue" id="qdB-Tu-9at"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,6 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-76" y="36"/>
         </scene>
         <!--Pokedex View Controller-->
         <scene sceneID="9A8-Za-6Op">
