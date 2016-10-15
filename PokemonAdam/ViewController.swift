@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
@@ -38,6 +39,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
+    @IBAction func logout(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             self.setUp()
@@ -50,11 +55,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.showsUserLocation = true
         manager.startUpdatingLocation()
         
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in
             //Spawn a Pokemon
             
+            /*
+             if let coord = self.manager.location?.coordinate {
+             let anno = MKPointAnnotation()
+             anno.coordinate.latitude = FIRDatabase.database().reference().child("Pokemon").child("eevee").child("lat").
+             anno.coordinate.longitude = FIRDatabase.database().reference().child("Pokemon").child("eevee").child("long")
+             self.mapView.addAnnotation(anno)
+             */
+            
             if let coord = self.manager.location?.coordinate {
-                
                 let pokemon = self.pokemons[Int(arc4random_uniform(UInt32(self.pokemons.count)))]
                 let anno = PokeAnnontation(coord: coord, pokemon: pokemon)
                 anno.coordinate = coord
@@ -64,10 +76,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 anno.coordinate.longitude += randoLon
                 self.mapView.addAnnotation(anno)
                 
+                
             }
             
         })
- 
+        
         
         
     }
@@ -126,17 +139,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 
                 if MKMapRectContainsPoint(mapView.visibleMapRect, MKMapPointForCoordinate(coord)) {
                     
-                
-                
-                    pokemon.caught = true
-                (UIApplication.shared.delegate as! AppDelegate).saveContext()
-                
-                mapView.removeAnnotation(view.annotation!)
                     
-                 
+                    
+                    pokemon.caught = true
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    
+                    mapView.removeAnnotation(view.annotation!)
+                    
+                    
                     let alertVC = UIAlertController(title: "Congrats!", message: "You caught a \(pokemon.name!). You are a Pokemon master", preferredStyle: .alert)
                     let pokedexAction = UIAlertAction(title: "Pokedex", style: .default, handler: { (action) in
-                    
+                        
                         self.performSegue(withIdentifier: "pokedexSegue", sender: nil)
                     })
                     alertVC.addAction(pokedexAction)

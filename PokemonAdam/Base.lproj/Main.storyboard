@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0EZ-B0-X0I">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="d3D-0B-qu9">
+            <objects>
+                <viewController id="0EZ-B0-X0I" customClass="WelcomeViewController" customModule="PokemonAdam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X1w-1w-luI"/>
+                        <viewControllerLayoutGuide type="bottom" id="nOi-u0-QbJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IBB-f1-XGC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to PokemonAdam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg0-0E-grW">
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zKh-KS-1HS">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="EEz-mn-duG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVz-p0-cvZ">
+                                <state key="normal" title="Login / Register"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="0EZ-B0-X0I" eventType="touchUpInside" id="4wk-zD-IpU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="youremail@email.com" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0AD-wi-jRx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="DXD-AA-nuI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fg0-0E-grW" firstAttribute="leading" secondItem="IBB-f1-XGC" secondAttribute="leadingMargin" constant="10" id="3gv-Yv-xHG"/>
+                            <constraint firstItem="rVz-p0-cvZ" firstAttribute="top" secondItem="zKh-KS-1HS" secondAttribute="bottom" constant="20" id="5Ct-cS-pRx"/>
+                            <constraint firstItem="0AD-wi-jRx" firstAttribute="top" secondItem="Fg0-0E-grW" secondAttribute="bottom" constant="30" id="EBy-j6-dZu"/>
+                            <constraint firstItem="Fg0-0E-grW" firstAttribute="centerX" secondItem="IBB-f1-XGC" secondAttribute="centerX" id="HN4-cW-iEX"/>
+                            <constraint firstItem="Fg0-0E-grW" firstAttribute="top" secondItem="X1w-1w-luI" secondAttribute="bottom" constant="20" id="Lh3-qe-1mX"/>
+                            <constraint firstItem="zKh-KS-1HS" firstAttribute="centerX" secondItem="IBB-f1-XGC" secondAttribute="centerX" id="MCa-ez-znA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fg0-0E-grW" secondAttribute="trailing" constant="10" id="UoH-1o-kkw"/>
+                            <constraint firstItem="rVz-p0-cvZ" firstAttribute="centerX" secondItem="IBB-f1-XGC" secondAttribute="centerX" id="j4C-gH-HoJ"/>
+                            <constraint firstItem="zKh-KS-1HS" firstAttribute="top" secondItem="0AD-wi-jRx" secondAttribute="bottom" constant="20" id="kyx-zn-uSK"/>
+                            <constraint firstItem="0AD-wi-jRx" firstAttribute="centerX" secondItem="IBB-f1-XGC" secondAttribute="centerX" id="vjh-Xv-JPC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="0AD-wi-jRx" id="bq3-a3-uo7"/>
+                        <outlet property="passwordTextField" destination="zKh-KS-1HS" id="d5W-3H-EbG"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="signinSegue" id="aK2-Ar-OIQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nlc-DE-Mtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-834.39999999999998" y="35.532233883058474"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -40,6 +104,14 @@
                                     <segue destination="uXA-1m-Bsd" kind="presentation" identifier="pokedexSegue" id="qdB-Tu-9at"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm9-cg-o3R">
+                                <frame key="frameInset" minX="37" minY="50" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vb9-H7-Lna"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -59,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="36"/>
+            <point key="canvasLocation" x="-76" y="35.532233883058474"/>
         </scene>
         <!--Pokedex View Controller-->
         <scene sceneID="9A8-Za-6Op">
